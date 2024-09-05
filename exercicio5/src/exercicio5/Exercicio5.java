@@ -33,7 +33,7 @@ public class Exercicio5 {
 
         //consultas
         Consulta consulta1 = new Consulta(paciente1, medico1, new Date());
-        Consulta consulta2 = new Consulta(paciente2, medico1, new Date(01/01/2024));
+        Consulta consulta2 = new Consulta(paciente2, medico1, new Date());
 
         medico1.agendarConsulta(consulta1);
         medico1.agendarConsulta(consulta2);
