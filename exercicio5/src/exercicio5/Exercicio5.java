@@ -5,6 +5,9 @@
  */
 package exercicio5;
 
+import java.util.Date;
+
+
 /**
  *
  * @author aluno.saolucas
@@ -15,7 +18,31 @@ public class Exercicio5 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        //medico
+        Medico medico1 = new Medico("Pedro Souza", "Pediatra");
+        
+        
+        //pacinetes
+        Paciente paciente1 = new Paciente("Maria Silva", "000.000.000-00");
+        Paciente paciente2 = new Paciente("Carlos Pereira", "123.456.789-10");
+
+        //adicionando pacientes aos medicos
+        medico1.adicionarPaciente(paciente1);
+        medico1.adicionarPaciente(paciente2);
+
+        //consultas
+        Consulta consulta1 = new Consulta(paciente1, medico1, new Date());
+        Consulta consulta2 = new Consulta(paciente2, medico1, new Date(01/01/2024));
+
+        medico1.agendarConsulta(consulta1);
+        medico1.agendarConsulta(consulta2);
+
+        //pacientes do medico
+        medico1.listarPaciente();
+
+        //consultas do medico
+        medico1.listarConsulta();
     }
     
 }
