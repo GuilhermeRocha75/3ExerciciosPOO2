@@ -1,21 +1,39 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package exercicio4;
 
-/**
- *
- * @author aluno.saolucas
- */
 public class Exercicio4 {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
     
+    
+    
+    public static void main(String[] args) {
+        // Criando o sistema de reservas
+        SistemaReservas sistema = new SistemaReservas();
+
+        // Criando voos
+        Voo voo1 = new Voo("Azul 556", 2);
+        Voo voo2 = new Voo("Gol 665", 1);
+
+        // Adicionando voos ao sistema
+        sistema.adicionarVoo(voo1);
+        sistema.adicionarVoo(voo2);
+
+        // Criando passageiros
+        Passageiro passageiro1 = new Passageiro("Alice");
+        Passageiro passageiro2 = new Passageiro("Joao");
+
+        // Fazendo reservas
+        sistema.fazerReserva(passageiro1, voo1);
+        sistema.fazerReserva(passageiro2, voo1); 
+        sistema.fazerReserva(passageiro1, voo2);
+
+        passageiro1.Separador();
+        
+        // Listando reservas de Alice
+        passageiro1.listarReservas();
+        
+        passageiro1.Separador();
+        
+        // Listando reservas de Joao
+        passageiro2.listarReservas();
+    }
 }

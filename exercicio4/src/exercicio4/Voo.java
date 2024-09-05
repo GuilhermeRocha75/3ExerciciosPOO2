@@ -1,14 +1,35 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package exercicio4;
 
-/**
- *
- * @author aluno.saolucas
- */
 public class Voo {
-    
+    private String numeroVoo;
+    private int capacidade;
+    private int lugaresDisponiveis;
+
+    public Voo(String numeroVoo, int capacidade) {
+        this.numeroVoo = numeroVoo;
+        this.capacidade = capacidade;
+        this.lugaresDisponiveis = capacidade;
+    }
+
+    public String getNumeroVoo() {
+        return numeroVoo;
+    }
+
+    public int getLugaresDisponiveis() {
+        return lugaresDisponiveis;
+    }
+
+    // Método para verificar se há disponibilidade no voo
+    public boolean verificarDisponibilidade() {
+        return lugaresDisponiveis > 0;
+    }
+
+    // Método para reduzir o número de lugares disponíveis
+    public void reservarLugar() {
+        if (verificarDisponibilidade()) {
+            lugaresDisponiveis--;
+        } else {
+            System.out.println("Voo " + numeroVoo + " lotado.");
+        }
+    }
 }
